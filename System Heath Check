@@ -1,5 +1,7 @@
 Task: Create a script that will check the system health and return Notification
       
+      https://www.coursera.org/learn/python-operating-system/lecture/oU0j4/practical-automation-example
+      
       The script should check two parameters: 1 - Disk Usage  2- CPU Ussage
       If CPU usage is greater than  75% then return False else True
       If Free disk usage is greater than 20% then system is healthy else not.

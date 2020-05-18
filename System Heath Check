@@ -1,0 +1,47 @@
+Task: Create a script that will check the system health and return Notification
+      
+      The script should check two parameters: 1 - Disk Usage  2- CPU Ussage
+      If CPU usage is greater than  75% then return False else True
+      If Free disk usage is greater than 20% then system is healthy else not.
+      
+______________________________________________________________________________________________________________________________
+
+Modules used:
+
+1- shutil: (sh - util)
+When you need to work with high-level file operations like copying contents of a file, create a new copy of a file and archiving it
+Python shutil module is the way to go.
+
+here is it used to disk_usage calculation.
+It has 3 attributes -> free,total etc
+  
+  
+2- psutil (ps - util)
+  Process and system utilities
+  
+  psutil (python system and process utilities) is a cross-platform library for retrieving information on running processes 
+  and system utilization (CPU, memory, disks, network, sensors) in Python.
+  
+  https://psutil.readthedocs.io/en/latest/
+
+
+_____________________________________________________________________________________________________________________________
+Code:
+
+import shutil
+import psutil
+
+def check_disk_usage(disk):  #---> return True if amount of free disk usage is greater than 20
+    du = shutil.disk_usage("/")
+    free = du.free / du.total * 100
+    return free > 20  # return Boolean ouput
+
+def check_cpu_usage(): #--> boolean True for healthy
+    usage = psutil.cpu_percent(1)
+    return usage < 75
+
+
+if not check_disk_usage('/') or not check_cpu_usage():
+    print("ERROR!")
+else:
+    print('Everything is Ok!')

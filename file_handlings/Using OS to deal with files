@@ -7,3 +7,26 @@ _______________________________________
 
 print(os.path.exists("filename.txt")   -> will return the boolean output
 
+4- To get the size of the file: ( In bytes)
+________________________________________________
+
+print(os.path.getsize("file.txt")
+
+5- To check when the file was last modified:
+____________________________________________
+
+print(os.path.getmtime("file.txt"))
+
+This will return a unix timestamp which is equal to number of second since Jan 1,1970 ( This was the time  from when the time assocaited 
+with a file was stored in computers)
+
+We can use datetime module to make it readable
+
+import datatime
+timestamp = os.path.getmtime("file.text")
+datetime.datetime.fromtimestamp(timestamp)
+
+output: 2020-06-07 16:12:16.951167
+
+
+

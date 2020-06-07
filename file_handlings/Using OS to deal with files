@@ -1,0 +1,9 @@
+1- os.remove("filename.txt") will delete the file from the system if it exits
+
+2- os.rename("currentname.txt","newname.txt") will change the name of the file
+
+3- To check if a file exits or not:
+_______________________________________
+
+print(os.path.exists("filename.txt")   -> will return the boolean output
+
